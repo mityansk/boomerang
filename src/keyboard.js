@@ -3,13 +3,15 @@
 // Главное не используй всё вместе!
 
 const keypress = require('keypress');
-const boomerang = require('./game-models/Boomerang')
+
 // Управление.
 // Настроим соответствия нажатий на клавиши и действий в игре.
 
 const keyboard = {
-  'space': () => boomerang.state = 'start',
-  w: () => console.log('w'),
+  'space': (boomerang) => { 
+    boomerang.state = 'start'
+  }, 
+  w: () => console.log('w'), 
   e: () => console.log('e'),
   r: () => console.log('r'),
   t: () => console.log('t'),
@@ -24,7 +26,7 @@ function runInteractiveConsole(boomerang) {
     if ('space') {
       // Вызывает команду, соответствующую нажатой кнопке.
       if (key.name in keyboard) {
-        keyboard[key.name]();
+        keyboard[key.name](boomerang);
       }
       // Прерывание программы.
       if (key.ctrl && key.name === 'c') {
