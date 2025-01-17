@@ -37,6 +37,6 @@ function runInteractiveConsole(boomerang) {
 
 // Давай попробуем запустить этот скрипт!
 
-runInteractiveConsole();
+// runInteractiveConsole();
 
-// module.exports = runInteractiveConsole;
+module.exports = runInteractiveConsole;
