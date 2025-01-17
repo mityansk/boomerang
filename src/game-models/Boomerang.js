@@ -1,8 +1,8 @@
 // Бумеранг является оружием.
 // В дальнейшем можно добавить другое оружие.
 // Тогда можно будет создать класс Weapon и воспользоваться наследованием!
-const { enemy } = require ('Enemy')
-const { hero } = require ('Hero')
+const enemy = require ('./Enemy')
+const hero = require ('./Hero')
 
 class Boomerang {
   constructor() {
