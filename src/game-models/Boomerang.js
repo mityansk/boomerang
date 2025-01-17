@@ -17,24 +17,22 @@ class Boomerang {
     if (this.enemy.position !== '?') {
       this.moveRight();
     } else {
-    this.moveLeft()
-    };
+      this.moveLeft();
+    }
   }
 
   moveLeft() {
-   if (this.position !== this.hero.position) {
-    this.position -= 1;
-   } else {
-    this.state = 'hidden'
-  }
+    if (this.position !== this.hero.position) {
+      this.position -= 1;
+    } else {
+      this.state = 'returned';
+    }
   }
 
   moveRight() {
     // Идём вправо.
     this.position += 1;
   }
-
-  
 }
 
 module.exports = Boomerang;
