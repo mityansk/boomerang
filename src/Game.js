@@ -15,8 +15,8 @@ class Game {
   constructor({ trackLength }) {
     this.trackLength = trackLength;
     this.hero = new Hero({ position: 0 }); // Герою можно аргументом передать бумеранг.
-    this.boomerang = new Boomerang();
     this.enemy = new Enemy();
+    this.boomerang = new Boomerang(this.hero, this.enemy);
     this.view = new View();
     this.track = Array(trackLength).fill(' ');
     keyboard(this.boomerang);
@@ -53,7 +53,7 @@ class Game {
       this.check();
       this.regenerateTrack();
       this.view.render(this.track);
-    }, 300);
+    }, 100);
   }
 }
 
