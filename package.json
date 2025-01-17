@@ -4,6 +4,7 @@
   "description": "Настало время разрабатывать лучшие в мире игры!",
   "main": "run.js",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "find-exec": "^1.0.2",
     "keypress": "^0.2.1",
     "pg": "^8.7.3",
@@ -15,10 +16,12 @@
     "@elbrus/eslint-config": "^1.0.0",
     "@eslint/js": "^9.18.0",
     "eslint": "^9.18.0",
-    "globals": "^15.14.0"
+    "globals": "^15.14.0",
+    "sequelize-cli": "^6.6.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:reset": "sequelize db:drop && sequelize db:create && sequelize db:migrate && sequelize db:seed:all"
   },
   "repository": {
     "type": "git",
